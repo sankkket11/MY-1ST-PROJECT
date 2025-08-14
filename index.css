@@ -1,0 +1,886 @@
+/* --- UNIVERSAL & BASE STYLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* A more consistent box model */
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* --- HERO SECTION & NAVIGATION --- */
+.main {
+    background-image: url("assets/images/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_large.jpg");
+    background-position: center center;
+    background-size: max(1200px, 100vw);
+    /* Corrected syntax */
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+
+
+/* HEADER----- */
+/* --- Main Header Container --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 10px 10%;
+    /* Use percentage for responsive padding */
+    width: 100%;
+}
+
+/* --- Logo --- */
+.logo {
+    width: 180px;
+    height: auto;
+    z-index: 1;
+
+}
+
+/* --- Button Container --- */
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between the two buttons */
+}
+
+/* --- Language Selector --- */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+/* The main button that is always visible */
+.language-button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.language-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dropdown menu that appears on focus */
+.dropdown-content {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    /* Position below the button */
+    left: 0;
+    background-color: #f0f0f0;
+    /* Light grey background */
+    min-width: 120px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 8px;
+    /* Space between button and dropdown */
+}
+
+/* The CSS magic: Show dropdown when the container has focus */
+.language-selector:focus-within .dropdown-content {
+    display: block;
+}
+
+/* Styling for the links inside the dropdown */
+.dropdown-content a {
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Style for the checkmark on the selected item */
+.dropdown-content a .checkmark {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Hide checkmark on non-selected items but keep space */
+.dropdown-content a .checkmark.hidden {
+    visibility: hidden;
+}
+
+/* --- Sign In Button --- */
+.redbtn {
+    background-color: #e50914;
+    color: white;
+    padding: 7px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1;
+    /* In case you use an <a> tag */
+    transition: background-color 0.2s;
+}
+
+.redbtn:hover {
+    background-color: #f40612;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 550px) {
+    .logo {
+        width: 90px;
+        /* Make logo smaller on mobile */
+    }
+
+    .language-button,
+    .redbtn {
+        padding: 5px 8px;
+        /* Reduce button padding */
+        font-size: 12px;
+        /* Reduce font size */
+    }
+
+    .button-wrapper {
+        gap: 10px;
+        /* Reduce gap between buttons */
+    }
+}
+
+/* HEADER----- END*/
+
+.main .box {
+    height: 100%;
+    /* Changed to 100% to always match parent */
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    /* Use max-width for fluidity */
+    width: 90%;
+    /* Use percentage for responsiveness */
+    margin: auto;
+    height: 92px;
+    /* Increased height slightly for better spacing */
+    position: relative;
+    z-index: 10;
+}
+
+
+.hero {
+    /* height: calc(100% - 92px); */
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+    text-align: center;
+
+}
+
+.hero> :nth-child(1) {
+    font-size: 48px;
+    /* Slightly adjusted base size */
+    font-weight: 900;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero> :nth-child(2) {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.hero> :nth-child(3) {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.hero div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+input {
+    color: white;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: rgba(23, 23, 23, 0.5);
+    width: 350px;
+    max-width: 100%;
+}
+
+.mainbtn {
+    background-color: #e50914;
+    color: white;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+
+}
+
+/* --- CURVED SEPARATOR --- */
+.curved-separator {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    line-height: 0;
+}
+
+.curved-separator svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* --- TRENDING NOW SECTION --- */
+
+
+
+.trending-section {
+    width: 90%;
+    max-width: 1280px;
+    margin: 100px auto;
+    box-sizing: border-box;
+    margin-top: -200px;
+    padding: 10px 5%;
+}
+
+.trending-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 12rem;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.scroll-area {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.carousel-item {
+    position: relative;
+    flex-shrink: 0;
+    width: 11rem;
+    height: 15rem;
+    margin-left: 20px;
+}
+
+.carousel-item-image {
+    width: 100%;
+    height: 240px;
+    /* Adjusted height */
+    object-fit: cover;
+    /* Ensures images cover the area without distortion */
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover .carousel-item-image {
+    transform: scale(1.05);
+}
+
+.item-number {
+    font-family: 'Teko', sans-serif;
+    font-size: 6rem;
+    font-weight: 600;
+    -webkit-text-stroke: 2px #a3a3a3;
+    color: black;
+    position: absolute;
+    bottom: -1rem;
+    left: -1.5rem;
+    z-index: 20;
+    line-height: 1;
+}
+
+.scroll-area::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+    background: #2d2d2d;
+    border-radius: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* --- REASONS TO JOIN SECTION --- */
+
+
+
+.reasons-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 2.5%;
+}
+
+.reasons-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.reasons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* IMPORTANT: Allows cards to wrap to the next line */
+    gap: 1.5rem;
+}
+
+.reason-card {
+    background: linear-gradient(149deg, #192247, #210e17 96.86%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    flex: 1 1 250px;
+    /* Flex-grow, flex-shrink, flex-basis. Allows wrapping */
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    padding-bottom: 2rem;
+}
+
+
+
+.card-icon-container {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+
+
+.icon-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: box-shadow 0.4s ease, background-color 0.4s ease;
+            z-index: 0;
+        }
+
+
+
+
+         .card-svg {
+            width: 48px;
+            height: 48px;
+            position: relative; /* Ensure SVG is above the pseudo-element */
+            z-index: 1;
+        }
+
+        /* --- Specific Icon Colors & Glows --- */
+        .tv-icon { color: #a855f7; } /* Purple */
+        .reason-card:hover .tv-icon::before { background-color: rgba(168, 85, 247, 0.1); box-shadow: 0 0 35px rgba(168, 85, 247, 0.4); }
+
+        .download-icon { color: #ec4899; } /* Pink */
+        .reason-card:hover .download-icon::before { background-color: rgba(236, 72, 153, 0.1); box-shadow: 0 0 35px rgba(236, 72, 153, 0.4); }
+
+        .watch-icon { color: #ef4444; } /* Red */
+        .reason-card:hover .watch-icon::before { background-color: rgba(239, 68, 68, 0.1); box-shadow: 0 0 35px rgba(239, 68, 68, 0.4); }
+
+        .profile-icon { color: #3b82f6; } /* Blue */
+        .reason-card:hover .profile-icon::before { background-color: rgba(59, 130, 246, 0.1); box-shadow: 0 0 35px rgba(59, 130, 246, 0.4); }
+
+
+
+
+/* --- FAQ SECTION --- */
+
+
+.faq-container-wrapper {
+    width: 100%;
+    /* Fluid width */
+    max-width: 1100px;
+    /* Max width for large screens */
+    margin: 0px auto;
+    margin-bottom: 70px;
+    
+}
+
+.faq-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+details {
+    margin-bottom: 0.5rem;
+    transition: background-color 0.5s ease-out;
+}
+
+summary {
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    transition: background-color 0.2s ease-out;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #2d2d2d;
+}
+
+summary:hover {
+    background-color: #414141;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 3rem;
+    font-weight: normal;
+    transition: transform 0.2s ease-in-out;
+}
+
+details[open]>summary::after {
+    content: '\00D7';
+    transform: rotate(45deg);
+    /* Smoother rotation */
+}
+
+details[open]>summary {
+    border-bottom: 1px solid black;
+}
+
+.faq-answer {
+    padding: 1.5rem;
+    color: #ffffff;
+    line-height: 1.5;
+    font-size: 20px;
+    background-color: #2d2d2d;
+}
+
+
+
+
+/* --- BOTTOM FORM & FOOTER --- */
+
+
+
+.container {
+    width: 90%;
+    max-width: 950px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.headline {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    width: 100%;
+
+}
+
+.email-input {
+    flex-grow: 1;
+    font-size: 1rem;
+    padding: 16px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #888;
+    color: #fff;
+    border-radius: 4px;
+
+}
+
+.submit-button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 18px;
+
+    font-size: 1.8rem;
+    font-weight: 610;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.submit-button span:last-child {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+
+
+
+footer {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto 100px auto;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-top p {
+    margin-bottom: 30px;
+}
+
+.footer-top p a {
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* (Note: The language selector CSS is complex and works well, so it's kept as is) */
+/* .language-selector {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    padding-bottom: 40px;
+    z-index: 2;
+} */
+
+.language-button {
+    background-color: #1c1c1e;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s;
+}
+
+.language-button .icon {
+    font-size: 18px;
+}
+
+.language-button .caret {
+    font-size: 12px;
+    transform: translateY(1px);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #c7c7cc;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.language-selector:focus-within .dropdown-content {
+    display: block;
+}
+
+.language-selector:focus-within .caret {
+    transform: rotate(180deg);
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #b9b9be;
+}
+
+.dropdown-content a.selected {
+    font-weight: 600;
+}
+
+.dropdown-content a .checkmark {
+    margin-right: 12px;
+    font-weight: bold;
+    color: #000;
+}
+
+.region-text {
+    font-size: 0.875rem;
+    margin-top: 20px;
+}
+
+/* Hide the checkbox from view. It still works when hidden. */
+#learn-more-toggle {
+    display: none;
+}
+
+/* Hide the extra content by default */
+.extra-content {
+    display: none;
+    margin-top: 1em;
+    /* Adds space above when it appears */
+}
+
+/* Style the label to look like a link */
+label[for="learn-more-toggle"] {
+    color: rgb(68,142,244);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Style links inside the revealed text */
+.extra-content a {
+    color: rgb(68,142,244);
+}
+
+/* --- The Magic --- */
+
+/* When the checkbox is checked, HIDE the 'Learn more' label that comes right after it */
+#learn-more-toggle:checked+label[for="learn-more-toggle"] {
+    display: none;
+}
+
+/* When the checkbox is checked, SHOW the extra content that follows the label */
+#learn-more-toggle:checked+label[for="learn-more-toggle"]+.extra-content {
+    display: block;
+    /* Use 'block' to force it onto a new line */
+}
+
+
+/******************************************/
+/* RESPONSIVE STYLES             */
+/******************************************/
+
+/* --- TABLET STYLES (Up to 1024px) --- */
+@media (max-width: 1024px) {
+    .reasons-grid {
+        /* On tablets, show 2 cards per row */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-links {
+        /* On tablets, show 2 columns in the footer */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 40px;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 20px;
+    }
+}
+
+/* --- MOBILE STYLES (Up to 768px) --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        /* Stack logo and buttons */
+        height: auto;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .netlogo {
+        width: 120px;
+    }
+
+    .hero {
+        padding: 0 15px;
+        /* Reduce horizontal padding */
+        gap: 15px;
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 32px;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 18px;
+    }
+
+    .hero> :nth-child(3) {
+        font-size: 16px;
+    }
+
+    .hero div,
+    .form-group {
+        flex-direction: column;
+        /* Stack email input and button */
+        width: 100%;
+    }
+
+    input,
+    .mainbtn,
+    .email-input,
+    .submit-button {
+        width: 100%;
+        /* Make inputs and buttons full width */
+        font-size: 16px;
+    }
+
+    .mainbtn {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+
+    .trending-section,
+    .reasons-section,
+    .faq-container-wrapper,
+    footer {
+        width: 90%;
+        margin-top: 60px;
+    }
+
+    .reasons-grid {
+        flex-direction: column;
+        /* Stack reason cards vertically */
+    }
+
+    .faq-heading {
+        font-size: 2rem;
+    }
+
+    summary {
+        font-size: 18px;
+        padding: 1rem;
+    }
+
+    .faq-answer {
+        font-size: 16px;
+        padding: 1rem;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for footer links on mobile */
+    }
+}
